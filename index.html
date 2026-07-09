@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Static retail management prototype with storefront, POS, warehouse, and admin surfaces." />
+    <title>RetailOS Prototype</title>
+    <script>
+      (function () {
+        var isProjectPage = location.hostname.endsWith(".github.io");
+        var firstPathPart = location.pathname.split("/").filter(Boolean)[0];
+        var basePath = isProjectPage && firstPathPart ? "/" + firstPathPart + "/" : "/";
+        document.write('<base href="' + basePath + '">');
+        window.__APP_BASE_PATH__ = basePath === "/" ? "" : basePath.slice(0, -1);
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
